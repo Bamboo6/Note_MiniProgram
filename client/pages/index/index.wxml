@@ -13,18 +13,27 @@
           <view class='note'>
             <text>{{item.content}}</text>
           </view>
+          <view>
+            <text>{{item.time}}</text>
+          </view>
         </view>
       </view>
     </view>
+    
+    <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" wx:if="{{!authorized}}" > 获取头像昵称 </button>
+
     <view class='bottom'>
       <!-- 写留言 -->
       <view class='input'>
-        <input bindinput='confirm' placeholder='留言内容' />
+        <input bindinput='confirm' value='{{newNote}}' placeholder='留言内容' />
       </view>
       <view class='btn'>
-        <button bindtap='click'>发送</button>
+        <button bindtap='click' disabled='{{!authorized}}'>{{authorized?"发送":"未授权"}}</button>
       </view>
     </view>
+
+      
+
   </view>
 </view>
 

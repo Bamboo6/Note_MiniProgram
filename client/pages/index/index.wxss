@@ -50,10 +50,14 @@
 }
 
 .input{
-  flex: 4;
+  flex: 2.9;
   text-align: left;
 }
 
 .btn{
   flex: 1;
+}
+
+.userinfo-nickname {
+  color: #aaa;
 }

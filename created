@@ -1,0 +1,19 @@
+#!/bin/bash
+cd $(cd `dirname $0`; pwd)
+# Path = $(cd `dirname $0`; pwd)
+echo "------------------------------"
+Path=`pwd`
+echo "Path: " $Path
+echo ""
+echo "Please confirm the path. Press enter to continue."
+read
+echo "------------------------------"
+git init
+git add .
+git commit -m "created"
+echo "------------------------------"
+read -p "Github Repositories Url:" giturl
+# echo "Github Repositories Url: "$giturl
+echo "------------------------------"
+git remote add origin $giturl
+git push -u origin master
